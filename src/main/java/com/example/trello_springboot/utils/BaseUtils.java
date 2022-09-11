@@ -1,7 +1,10 @@
 package com.example.trello_springboot.utils;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
 
 /**
  * @author "Tojaliyev Asliddin"
@@ -11,4 +14,12 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class BaseUtils {
+
+    public String generateActivationToken(@NonNull Long id) {
+        return generateActivationToken(String.valueOf(id));
+    }
+
+    public String generateActivationToken(@NonNull String text) {
+        return UUID.randomUUID().toString();
+    }
 }

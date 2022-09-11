@@ -27,12 +27,12 @@ public class AccessTokenService extends AbstractTokenService implements TokenSer
 
     @Override
     public String generateToken(SecurityUserDetails userDetails) {
-        return null;
+        return jwt(userDetails.getUsername());
     }
 
     @Override
     public Boolean isValid(String token) {
-        return null;
+        return !super.isTokenValid(token,this.accessTokenSecret);
     }
 
     public String getSubject(String token) {
