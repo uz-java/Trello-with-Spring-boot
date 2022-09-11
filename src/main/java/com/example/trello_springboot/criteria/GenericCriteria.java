@@ -6,4 +6,7 @@ package com.example.trello_springboot.criteria;
  * Trello_Spring-boot/IntelliJ IDEA
  */
 public class GenericCriteria {
+    private Integer page;
+    private Integer size;
+    private String order;
 }

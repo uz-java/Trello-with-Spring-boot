@@ -6,4 +6,5 @@ package com.example.trello_springboot.dtos;
  * Trello_Spring-boot/IntelliJ IDEA
  */
 public class GenericDto {
+    private Long id;
 }

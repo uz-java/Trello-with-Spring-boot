@@ -5,5 +5,6 @@ package com.example.trello_springboot.criteria;
  * @since 10/09/22 10:44 (Saturday)
  * Trello_Spring-boot/IntelliJ IDEA
  */
-public class AuthUserCriteria {
+public class AuthUserCriteria extends GenericCriteria{
+    private String username;
 }
