@@ -1,8 +1,11 @@
 package com.example.trello_springboot.services.jwt;
 
 import com.example.trello_springboot.config.security.SecurityUserDetails;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.time.temporal.ChronoUnit;
 
 /**
  * @author "Tojaliyev Asliddin"
@@ -10,7 +13,7 @@ import org.springframework.stereotype.Service;
  * Trello_Spring-boot/IntelliJ IDEA
  */
 @Service
-public class AccessTokenService extends AbstractTokenService implements TokenService{
+public class AccessTokenService extends AbstractTokenService implements TokenService {
 
     @Value("${jwt.access.token.secret}")
     private String accessTokenSecret;
@@ -30,5 +33,13 @@ public class AccessTokenService extends AbstractTokenService implements TokenSer
     @Override
     public Boolean isValid(String token) {
         return null;
+    }
+
+    public String getSubject(String token) {
+        return super.getSubject(token, accessTokenSecret);
+    }
+
+    public String jwt(@NonNull String subject) {
+        return super.jwt(subject, this.accessTokenSecret, this.amountToAdd, ChronoUnit.valueOf(this.unit));
     }
 }

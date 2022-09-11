@@ -41,7 +41,7 @@ public class JwtFilter extends OncePerRequestFilter {
             String token = parseJwt(request);
             final AccessTokenService accessTokenService = JwtUtils.accessTokenService;
             if (accessTokenService.isValid(token)) {
-               // String email = accessTokenService.getSubject(token);
+               String email = accessTokenService.getSubject(token);
                 //authService.
             }
         }
