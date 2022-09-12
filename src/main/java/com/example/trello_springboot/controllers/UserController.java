@@ -6,4 +6,5 @@ package com.example.trello_springboot.controllers;
  * Trello_Spring-boot/IntelliJ IDEA
  */
 public class UserController {
+
 }

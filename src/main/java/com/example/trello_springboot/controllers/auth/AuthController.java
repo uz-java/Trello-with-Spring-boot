@@ -27,7 +27,6 @@ public class AuthController extends ApiController<AuthService> {
     public ResponseEntity<TokenResponse> register(@RequestBody AccessTokenRequest request){
         return new ResponseEntity<>(service.generateToken(request), HttpStatus.CREATED);
     }
-
     @PostMapping(value = API+ V1+"/auth/refresh/token")
     public ResponseEntity<TokenResponse> register(@RequestBody RefreshTokenRequest request){
         return new ResponseEntity<>(service.refreshToken(request),HttpStatus.CREATED);
